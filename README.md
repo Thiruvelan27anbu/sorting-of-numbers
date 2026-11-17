@@ -49,8 +49,6 @@ STOP:   SJMP STOP
 
 END
 
-
-```
 ## OUTPUT(Ascending order)
 <img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/b846c0f5-fa98-4097-8b4e-73e97869e1d1" />
 
