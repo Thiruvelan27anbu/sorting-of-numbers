@@ -4,7 +4,7 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 ---
 
 ## Apparatus Required
-- Personal Computer  
+- Personal Computer  .
 - Keil µVision software  
 ---
 
