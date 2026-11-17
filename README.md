@@ -18,9 +18,8 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 5. Increment pointer and decrement **R7**.  
 6. If **R7 ≠ 0**, repeat from Step 2.  
 7. Otherwise, stop the program.  
----
-
-## Program (Ascending order)
+ 
+ ## Program (Ascending order)
 
       ORG 0000H
 
@@ -98,16 +97,9 @@ END
 
 
 
-
-
-
-
-```
 ## OUTPUT(Descending order)
 <img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/2742dfa7-12a4-43a5-8aae-2a604b2d0388" />
 
-
----
 ## RESULT:
 Thus the sorting of given data was done using 8051 keil software.
 
