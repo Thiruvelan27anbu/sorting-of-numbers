@@ -22,34 +22,37 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 
 ## Program (Ascending order)
 
-```asm
-asm
-ORG 0000H
-MOV R4,#04H        ; Number of passes (N-1)
-OUTER: MOV R3,#04H ; Inner loop counter
-MOV R0,#50H        ; Array starting address
-INNER: MOV A,@R0
-MOV B,A
-INC R0
-CLR C
-SUBB A,@R0         ; Compare adjacent elements
-JC NO_SWAP         ; If A < @R0 (Carry), no swap
-; Exchange elements
-MOV A,@R0
-XCH A,B
-MOV @R0,A
-DEC R0
-MOV A,B
-XCH A,B
-MOV @R0,A
-INC R0
-NO_SWAP: DJNZ R3,INNER
-DJNZ R4,OUTER
+      ORG 0000H
+
+        MOV R4,#04H
+
+AGAIN:  MOV R3,#04H
+        MOV R0,#30H
+
+LOOP1:  MOV A,@R0
+        MOV B,A
+        INC R0
+        MOV A,@R0
+        CJNE A,B,CONTINUE
+
+CONTINUE:
+        JNC SKIP
+        MOV @R0,B
+        DEC R0
+        MOV @R0,A
+        INC R0
+
+SKIP:   DJNZ R3,LOOP1
+        DJNZ R4,AGAIN
+
+STOP:   SJMP STOP
+
 END
+
 
 ```
 ## OUTPUT(Ascending order)
-<img width="1600" height="683" alt="image" src="https://github.com/user-attachments/assets/28713319-7481-4f29-b98b-2213caf2fd6c" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/b846c0f5-fa98-4097-8b4e-73e97869e1d1" />
 
 
 
@@ -68,30 +71,30 @@ END
    - If **Yes**, stop the program.  
 ---
 ## Program (Descending order)
+      ORG 0000H
 
-```asm
-asm
-ORG 0000H
-MOV R1,30H     ; Outer loop count = N
-DEC R1
+        MOV R4,#04H
 
-LOOP1: MOV R0,#40H
-       MOV R6,30H
-       DEC R6
+AGAIN:  MOV R3,#04H
+        MOV R0,#30H
 
-LOOP:  MOV A,@R0
-       INC R0
-       MOV B,@R0
-       CJNE A,B,NEXT
-NEXT:  JNC DOWN
+LOOP1:  MOV A,@R0
+        MOV B,A
+        INC R0
+        MOV A,@R0
+        CJNE A,B,CONTINUE
 
-       MOV @R0,A
-       DEC R0
-       MOV @R0,B
-       INC R0
+CONTINUE:
+        JC SKIP
+        MOV @R0,B
+        DEC R0
+        MOV @R0,A
+        INC R0
 
-DOWN:  DJNZ R6,LOOP
-       DJNZ R1,LOOP1   ; Outer loop ends correctly
+SKIP:   DJNZ R3,LOOP1
+        DJNZ R4,AGAIN
+
+STOP:   SJMP STOP
 
 END
 
@@ -99,9 +102,11 @@ END
 
 
 
+
+
 ```
 ## OUTPUT(Descending order)
-<img width="1600" height="831" alt="image" src="https://github.com/user-attachments/assets/e6012398-be07-4f1e-bde7-d4d2f99bb698" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/2742dfa7-12a4-43a5-8aae-2a604b2d0388" />
 
 
 ---
