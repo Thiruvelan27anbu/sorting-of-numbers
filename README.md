@@ -10,7 +10,7 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 
 ## Algorithm(ASCENDING ORDER)
 1. Initialize the register **R7** with count (number of elements).  
-2. Get the first two elements into two registers.  
+2. Get the first two elements into two registers.  .
 3. Compare the two elements:  
    - If the value in register **R0** is lower, exchange **A** and **R0** data.  
    - Otherwise, increment pointer and decrement register **R7**.  
